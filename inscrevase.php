@@ -41,7 +41,7 @@
 			<div class="col-md-4 m-auto">
 				<h3>Inscreva-se já.</h3>
 				
-				<form class="mt-4" method="post" action="" id="formCadastrarse">
+				<form class="mt-4" method="post" action="registra_usuario.php" id="formCadastrarse">
 					<div class="form-group">
 						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" required>
 					</div>
