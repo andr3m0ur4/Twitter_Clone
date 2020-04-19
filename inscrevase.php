@@ -44,10 +44,16 @@
 				<form class="mt-4" method="post" action="registra_usuario.php" id="formCadastrarse">
 					<div class="form-group">
 						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" required>
+						<?php if (isset($_GET['erro_usuario'])) : ?>
+							<p class="text-danger mt-1">Usuário já cadastrado</p>
+						<?php endif ?>
 					</div>
 
 					<div class="form-group">
 						<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+						<?php if (isset($_GET['erro_email'])) : ?>
+							<p class="text-danger mt-1">E-mail já cadastrado</p>
+						<?php endif ?>
 					</div>
 					
 					<div class="form-group">
