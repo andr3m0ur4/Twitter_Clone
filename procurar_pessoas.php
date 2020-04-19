@@ -17,7 +17,7 @@
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-		<script src="./js/home.js"></script>
+		<script src="./js/procurar_pessoas.js"></script>
 	
 	</head>
 	<body>
@@ -39,7 +39,7 @@
 						<li class="nav-item">
 							<a class="nav-link" href="./home.php">Página inicial</a>
 						</li>
-
+						
 						<li class="nav-item">
 							<a class="nav-link" href="./sair.php">Sair</a>
 						</li>
@@ -58,11 +58,11 @@
 							<hr>
 
 							<div class="row">
-								<div class="col-md-5">
+								<div class="col-6 col-md-12 col-xl-5">
 									TWEETS <br> 1
 								</div>
 
-								<div class="col-md-7">
+								<div class="col-6 col-md-12 col-xl-7">
 									SEGUIDORES <br> 1
 								</div>
 							</div>
@@ -74,12 +74,12 @@
 					<div class="card bg-light">
 						<div class="card-body">
 
-							<form id="form_tweet">
+							<form id="form_procurar_pessoas">
 								<div class="input-group">
-									<input type="text" class="form-control" id="txt_tweet" placeholder="O que está acontecendo agora?" maxlength="140" name="txt_tweet">
+									<input type="text" class="form-control" id="txt_nome" placeholder="Quem você está procurando?" maxlength="140" name="txt_nome">
 									<span class="input-group-append">
-										<button class="btn btn-outline-secondary" id="btn_tweet" type="button">
-											Tweet
+										<button class="btn btn-outline-secondary" id="btn_pesquisar" type="button">
+											Pesquisar
 										</button>
 									</span>
 								</div>
@@ -88,7 +88,7 @@
 						</div>
 					</div>
 
-					<div id="tweets" class="list-group mt-4">
+					<div id="pessoas" class="list-group mt-4">
 						
 					</div>
 				</div>
@@ -96,7 +96,7 @@
 				<div class="col-md-3">
 					<div class="card bg-light">
 						<div class="card-body">
-							<h5><a href="./procurar_pessoas.php">Procurar por pessoas</a></h5>
+							
 						</div>
 					</div>
 				</div>
