@@ -5,7 +5,7 @@
 	require_once './Bd.php';
 
 	$usuario = $_POST['usuario'];
-	$senha = $_POST['senha'];
+	$senha = md5($_POST['senha']);
 
 	$db = new Bd();
 	$con = $db -> conectar();
