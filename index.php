@@ -13,9 +13,7 @@
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	
-		<script>
-			// código javascript            
-		</script>
+		<script src="./js/app.js"></script>
 	</head>
 	<body>
 
@@ -34,16 +32,16 @@
 						<li class="nav-item">
 							<a class="nav-link" href="inscrevase.php">Inscrever-se</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="entrar" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<li class="nav-item <?= isset($_GET['erro']) ? 'show' : '' ?>">
+							<a class="nav-link" id="entrar" data-target="#" href="#" data-toggle="dropdown" role="button">
 								Entrar
 							</a>
 							
-							<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="entrar">
+							<ul class="dropdown-menu dropdown-menu-right <?= isset($_GET['erro']) ? 'show' : '' ?>" aria-labelledby="entrar">
 								<div class="col-md-12 mb-3">
 									<p>Você possui uma conta?</p>
 
-									<form method="post" action="" id="formLogin">
+									<form method="post" action="validar_acesso.php" id="formLogin">
 										<div class="form-group">
 											<input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="Usuário">
 										</div>
@@ -55,6 +53,10 @@
 										<button type="buttom" class="btn btn-primary" id="btn_login">
 											Entrar
 										</button>
+
+										<?php if (isset($_GET['erro'])) : ?>
+											<p class="mt-3 text-danger">Usuário e ou senha inválido(s)</p>
+										<?php endif ?>
 						
 									</form>
 								</div>
