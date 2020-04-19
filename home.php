@@ -16,6 +16,8 @@
 
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<script src="./js/home.js"></script>
 	
 	</head>
 	<body>
@@ -65,12 +67,18 @@
 				<div class="col-md-6">
 					<div class="card bg-light">
 						<div class="card-body">
-							<div class="input-group">
-								<input type="text" class="form-control" placeholder="O que está acontecendo agora?" maxlength="140" name="">
-								<span class="input-group-append">
-									<button class="btn btn-outline-secondary" type="button">Tweet</button>
-								</span>
-							</div>
+
+							<form id="form_tweet">
+								<div class="input-group">
+									<input type="text" class="form-control" id="txt_tweet" placeholder="O que está acontecendo agora?" maxlength="140" name="txt_tweet">
+									<span class="input-group-append">
+										<button class="btn btn-outline-secondary" id="btn_tweet" type="button">
+											Tweet
+										</button>
+									</span>
+								</div>
+							</form>
+							
 						</div>
 					</div>
 				</div>
