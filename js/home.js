@@ -15,8 +15,44 @@ $(document).ready(function() {
 
 				success: function(data) {
 					$('#txt_tweet').val('')
+					$('#tweets').html('')
+					atualizarTweets()
 				}
 			})
 		}
 	})
+
+	function atualizarTweets() {
+
+		// carregar os tweets
+		$.ajax({
+
+			url: './get_tweet.php',
+			method: 'post',
+
+			success: function(data) {
+				var tweets = JSON.parse(data)
+
+				tweets.forEach(function(tweet) {
+					var a = $('<a href="#"></a>')
+					a.addClass('list-group-item list-group-item-action')
+					a.appendTo('#tweets')
+
+					var h4 = $('<h4></h4>')
+					h4.html(tweet['usuario'] + ' ')
+					h4.appendTo(a)
+
+					var small = $('<small></small>')
+					small.html(' - ' + tweet['data_inclusao_formatada'])
+					small.appendTo(h4)
+
+					var p = $('<p></p>')
+					p.html(tweet['tweet'])
+					p.appendTo(a)
+				})
+			}
+		})
+	}
+
+	atualizarTweets()
 })

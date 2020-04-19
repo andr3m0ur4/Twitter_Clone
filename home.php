@@ -81,6 +81,10 @@
 							
 						</div>
 					</div>
+
+					<div id="tweets" class="list-group mt-4">
+						
+					</div>
 				</div>
 
 				<div class="col-md-3">
