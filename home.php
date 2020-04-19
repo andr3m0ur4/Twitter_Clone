@@ -41,18 +41,50 @@
 		</nav>
 
 		<div class="container mt-5">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="card bg-light">
+						<div class="card-body">
+							<h4><?= $_SESSION['usuario'] ?></h4>
 
-			<div class="col-md-4 m-auto">
-				Usuário autenticado
-				<?= $_SESSION['usuario'] ?>
-				<?= $_SESSION['email'] ?>
+							<hr>
+
+							<div class="row">
+								<div class="col-md-5">
+									TWEETS <br> 1
+								</div>
+
+								<div class="col-md-7">
+									SEGUIDORES <br> 1
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="card bg-light">
+						<div class="card-body">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="O que está acontecendo agora?" maxlength="140" name="">
+								<span class="input-group-append">
+									<button class="btn btn-outline-secondary" type="button">Tweet</button>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="card bg-light">
+						<div class="card-body">
+							<h5><a href="#">Procurar por pessoas</a></h5>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<div class="clearfix"></div>
-
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
 
 		</div>
 	
