@@ -15,7 +15,7 @@
 	$con = $db -> conectar();
 
 	$sql = "
-		INSERT INTO usuarios_seguidores (id_usuario, seguindo_id_usuario) 
+		INSERT INTO usuarios_seguidores (id_usuario, seguindo_id_usuario)
 		VALUES ($id_usuario, $seguir_id_usuario)
 	";
 

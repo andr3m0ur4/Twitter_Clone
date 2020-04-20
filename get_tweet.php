@@ -15,15 +15,15 @@
 
 	$sql = "
 		SELECT 
-			t.id_tweet, 
-			t.id_usuario, 
-			t.tweet, 
+			t.id_tweet,
+			t.id_usuario,
+			t.tweet,
 			DATE_FORMAT(t.data_inclusao, '%d %b %Y %T') AS data_inclusao_formatada,
 			u.usuario
 		FROM tweet AS t
 		JOIN usuarios AS u
 		ON (t.id_usuario = u.id)
-		WHERE id_usuario = $id_usuario 
+		WHERE id_usuario = $id_usuario
 		ORDER BY data_inclusao DESC
 	";
 

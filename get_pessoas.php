@@ -14,7 +14,13 @@
 	$db = new Bd();
 	$con = $db -> conectar();
 
-	$sql = "SELECT * FROM usuarios WHERE usuario LIKE '%$nome%' AND id <> $id_usuario";
+	$sql = "
+		SELECT u.*, us.id_usuario_seguidor
+		FROM usuarios AS u
+		LEFT JOIN usuarios_seguidores AS us
+		ON (u.id = us.seguindo_id_usuario AND us.id_usuario = $id_usuario)
+		WHERE u.usuario LIKE '%$nome%' AND u.id <> $id_usuario
+	";
 
 	$resultado_id = mysqli_query($con, $sql);
 	

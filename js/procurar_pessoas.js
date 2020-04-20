@@ -25,6 +25,16 @@ $(document).ready(function() {
 		$('#pessoas').html('')
 		
 		pessoas.forEach(function(pessoa) {
+			var esta_seguindo_usuario_sn = pessoa['id_usuario_seguidor'] != null ? 'S' : 'N'
+			var btn_seguir_display = 'block'
+			var btn_deixar_seguir_display = 'block'
+
+			if (esta_seguindo_usuario_sn == 'N') {
+				btn_deixar_seguir_display = 'none'
+			} else {
+				btn_seguir_display = 'none'
+			}
+
 			var a = $('<a href="#"></a>')
 			a.addClass('list-group-item list-group-item-action')
 			a.appendTo('#pessoas')
@@ -48,6 +58,7 @@ $(document).ready(function() {
 				'data-id-usuario': pessoa['id'],
 				id: 'seguir_' + pessoa['id']
 			})
+			button1.css('display', btn_seguir_display)
 			button1.appendTo(div)
 
 			var button2 = $('<button>Deixar de seguir</button>')
@@ -57,7 +68,7 @@ $(document).ready(function() {
 				'data-id-usuario': pessoa['id'],
 				id: 'deixar_seguir_' + pessoa['id']
 			})
-			button2.css('display', 'none')
+			button2.css('display', btn_deixar_seguir_display)
 			button2.appendTo(div)
 		})
 
