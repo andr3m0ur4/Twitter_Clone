@@ -2,6 +2,12 @@
 
 <?php if (!($_SESSION)) header('Location: index.php?erro=1') ?>
 
+<!-- quantidade tweets -->
+<?php require_once './quantidade_tweets.php' ?>
+
+<!-- quantidade de seguidores -->
+<?php require_once './quantidade_seguidores.php' ?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 	<head>
@@ -58,19 +64,19 @@
 							<hr>
 
 							<div class="row">
-								<div class="col-md-5">
-									TWEETS <br> 1
+								<div class="col-6 col-md-12 col-xl-5">
+									TWEETS <br> <?= $qtd_tweets['qtd_tweets'] ?>
 								</div>
 
-								<div class="col-md-7">
-									SEGUIDORES <br> 1
+								<div class="col-6 col-md-12 col-xl-7">
+									SEGUIDORES <br> <?= $qtd_seguidores['qtd_seguidores'] ?>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-6 mt-4 mt-md-0 order-2 order-md-1">
 					<div class="card bg-light">
 						<div class="card-body">
 
@@ -93,7 +99,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-3">
+				<div class="col-md-3 mt-4 mt-md-0 order-1 order-md-2">
 					<div class="card bg-light">
 						<div class="card-body">
 							<h5><a href="./procurar_pessoas.php">Procurar por pessoas</a></h5>
