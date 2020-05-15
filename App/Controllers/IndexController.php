@@ -9,6 +9,8 @@
 	{
 		public function index()
 		{
+			$this->view->login = $_GET['login'] ?? '';
+			
 			$this->render('index');
 		}
 
