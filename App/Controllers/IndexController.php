@@ -39,6 +39,7 @@
 			if ($usuario->validarCadastro() && count($usuario->getUsuarioPorEmail()) == 0) {
 
 				// sucesso
+				$usuario->__set('senha', md5($_POST['senha']));
 				$usuario->salvar();
 
 				$this->render('cadastro');
