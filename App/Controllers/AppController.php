@@ -48,4 +48,24 @@
 				header('Location: /?login=erro');
 			}
 		}
+
+		public function quemSeguir()
+		{
+			$this->validarAutentificacao();
+
+			$pesquisar_por = $_GET['pesquisar_por'] ?? '';
+
+			$usuarios = [];
+
+			if ($pesquisar_por != '') {
+				
+				$usuario = Container::getModel('Usuario');
+				$usuario->__set('nome', $pesquisar_por);
+				$usuarios = $usuario->getAll();
+			}
+
+			$this->view->usuarios = $usuarios;
+
+			$this->render('quem_seguir');
+		}
 	}
