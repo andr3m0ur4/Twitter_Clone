@@ -20,6 +20,14 @@
 
 			$this->view->tweets = $tweets;
 
+			$usuario = Container::getModel('Usuario');
+			$usuario->__set('id', $_SESSION['id']);
+
+			$this->view->info_usuario = $usuario->getInfoUsuario();
+			$this->view->total_tweets = $usuario->getTotalTweets();
+			$this->view->total_seguindo = $usuario->getTotalSeguindo();
+			$this->view->total_seguidores = $usuario->getTotalSeguidores();
+
 			$this->render('timeline');
 		}
 
@@ -57,15 +65,20 @@
 
 			$usuarios = [];
 
+			$usuario = Container::getModel('Usuario');
+			$usuario->__set('id', $_SESSION['id']);
+
 			if ($pesquisar_por != '') {
-				
-				$usuario = Container::getModel('Usuario');
 				$usuario->__set('nome', $pesquisar_por);
-				$usuario->__set('id', $_SESSION['id']);
 				$usuarios = $usuario->getAll();
 			}
 
 			$this->view->usuarios = $usuarios;
+
+			$this->view->info_usuario = $usuario->getInfoUsuario();
+			$this->view->total_tweets = $usuario->getTotalTweets();
+			$this->view->total_seguindo = $usuario->getTotalSeguindo();
+			$this->view->total_seguidores = $usuario->getTotalSeguidores();
 
 			$this->render('quem_seguir');
 		}
