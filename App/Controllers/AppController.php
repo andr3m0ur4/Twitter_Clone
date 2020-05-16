@@ -89,4 +89,17 @@
 
 			header('Location: /quem_seguir');
 		}
+
+		public function removerTweet()
+		{
+			$this->validarAutentificacao();
+
+			$id_tweet = $_GET['id_tweet'] ?? '';
+
+			$tweet = Container::getModel('Tweet');
+			$tweet->__set('id', $id_tweet);
+			$tweet->excluir();
+
+			header('Location: /timeline');
+		}
 	}

@@ -62,6 +62,12 @@
 				'action' => 'acao'
 			];
 
+			$routes['remover_tweet'] = [
+				'route' => '/remover_tweet',
+				'controller' => 'AppController',
+				'action' => 'removerTweet'
+			];
+
 			$this->setRoutes($routes);
 		}
 	}
