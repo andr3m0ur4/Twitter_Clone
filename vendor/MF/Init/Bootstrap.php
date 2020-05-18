@@ -28,8 +28,7 @@
 		{
 			foreach ($this->getRoutes() as $path => $route) {
 				if ($url == $route['route']) {
-					$class = DIRECTORY_SEPARATOR . 'App' . DIRECTORY_SEPARATOR . 'Controllers' .
-						DIRECTORY_SEPARATOR . ucfirst($route['controller']);
+					$class = '\\' . 'App' . '\\' . 'Controllers' . '\\' . ucfirst($route['controller']);
 
 					$controller = new $class;
 
