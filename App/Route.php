@@ -68,6 +68,18 @@
 				'action' => 'removerTweet'
 			];
 
+			$routes['get_tweets'] = [
+				'route' => '/get_tweets',
+				'controller' => 'AppController',
+				'action' => 'getTweets'
+			];
+
+			$routes['get_pessoas'] = [
+				'route' => '/get_pessoas',
+				'controller' => 'AppController',
+				'action' => 'getPessoas'
+			];
+
 			$this->setRoutes($routes);
 		}
 	}
