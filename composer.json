@@ -14,5 +14,8 @@
 			"App\\": "App/",
 			"MF\\": "vendor/MF/"
 		}
-	}
+	},
+	"scripts": {
+        "start": "php -S localhost:8080 -t Public"
+    }
 }
