@@ -10,7 +10,13 @@
 		{
 			$routes['home'] = [
 				'route' => '/',
-				'controller' => 'IndexController',
+				'controller' => 'indexController',
+				'action' => 'index'
+			];
+
+			$routes['home2'] = [
+				'route' => '/home',
+				'controller' => 'indexController',
 				'action' => 'index'
 			];
 
